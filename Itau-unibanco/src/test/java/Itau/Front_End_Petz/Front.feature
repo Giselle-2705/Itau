@@ -3,24 +3,32 @@
 
 Funcionalidade: Projeto Website
 
-  @LoginSucesso
-  Cenario: Login com sucesso
-    Dado Abrir pagina "Login com sucesso"
-    Quando Clicar em Sign In
-    E Fazer o cadastro na pagina
-    E Logar no site "OK" "teste"
-    Então Validar se login foi realizado com sucesso
+  @PetzSimples
+  Cenario: Petz teste simples
+    Dado Produto "ração"
+    Quando clicar no terceiro item
+    E Pegar informações do produto
+    E clicar adicionar no carrinho
+    Então validar se os dados continuam identicos
     
-  @LoginInvalido
-  Cenario: Login Invalido
-    Dado Abrir pagina "Login Invalido"
-    Quando Clicar em Sign In
-    E Logar no site "invalido" "teste"
-    Então Validar se login foi realizado sem sucesso
     
-  @LoginEmBranco
-  Cenario: Login em Branco
-    Dado Abrir pagina "Login em Branco"
-    Quando Clicar em Sign In
-    E Logar no site "" ""
-    Então Validar se login foi realizado sem sucesso
+    @PetzMassaDeDados
+  Cenario: Petz teste com massa
+  Esquema do Cenário: Cenario com massa
+    Dado Produto "<produto>"
+    Quando clicar no terceiro item
+    E Pegar informações do produto
+    E clicar adicionar no carrinho
+    Então validar se os dados continuam identicos
+    
+    Exemplos:
+    | produto |
+    | ração |
+    | coleira |
+    | guia |
+    | bifinho |
+    | brinquedos |
+    | ossos |
+    | tapetes |
+    | camas |
+    | roupas|
